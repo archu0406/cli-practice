@@ -69,6 +69,22 @@ let IND = 0.017;
 // If the user supplies an invalid initial or target currency, display a meaningful
 // warning message and exit the program.
 
+const supportedCurrencies = [
+	'USD',
+	'CAD',
+	'IND'
+];
+
+if(supportedCurrencies.includes(initialcurrency) === false) {
+	console.error('Whoops, the initial currency is unsupported. The supported currencies are:', supportedCurrencies);
+	process.exit();
+}
+
+if(supportedCurrencies.includes(targetcurrency) === false) {
+	console.error('Whoops, the target currency is unsupported. The supported currencies are:', supportedCurrencies);
+	process.exit();
+}
+
 
 
 // --------------------------------------------------
