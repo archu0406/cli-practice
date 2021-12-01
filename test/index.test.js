@@ -40,7 +40,11 @@ describe('isInitialCurrencyInvalid())', () => {
   test('should return true when the initial currency is undefined', () => {   
   });
 
-  test('should return true when the initial currency is undefined', () => {   
+  test('should return false when the initial currency is provided', () => {   
   });
 
 });
+
+
+
+
