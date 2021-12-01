@@ -19,4 +19,13 @@ describe('isAmountInvalid()', () => {
 
     expect(result).toBe(true);
   });
+
+  test('should return true when the amount is less than 0', () => {
+    let amount;
+    const result = isAmountInvalid(amount);
+
+    expect(result).toBe(true);
+  });
+
+  
 });
