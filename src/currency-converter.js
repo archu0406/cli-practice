@@ -95,6 +95,27 @@ if(supportedCurrencies.includes(targetcurrency) === false) {
 
 // Now we will compute the rate, apply it to the amount, and capture the result.
 
+let convertedAmount;
+
+if (initialcurrency === 'USD' && targetcurrency === 'CAD'){
+	convertedAmount = amount / CAD;
+} else if (initialcurrency === 'CAD' && targetcurrency === 'USD'){
+	convertedAmount = amount * CAD;
+}
+
+if (initialcurrency === 'USD' && targetcurrency === 'IND'){
+	convertedAmount = amount / IND;
+} else if (initialcurrency === 'IND' && targetcurrency === 'USD'){
+	convertedAmount = amount * IND;
+}
+
+if (initialcurrency === 'CAD' && targetcurrency === 'IND'){
+	convertedAmount = amount / IND;
+} else if (initialcurrency === 'IND' && targetcurrency === 'CAD'){
+	convertedAmount = amount * IND;
+}
+
+console.log(convertedAmount);
 
 
 // --------------------------------------------------
