@@ -14,7 +14,13 @@
 // In this step we will capture the command line  information supplied by the user.
 
 // We will store each piece of information in a dedicated variable for later use.
+const amount = process.argv[2];
+const initialcurrency = process.argv[3];
+const targetcurrency = process.argv[4];
 
+console.log(amount);
+console.log(initialcurrency);
+console.log(targetcurrency);
 
 
 // --------------------------------------------------
@@ -24,6 +30,7 @@
 
 // If any of the required information is missing, display a meaningful message
 // and exit the program.
+
 
 
 
