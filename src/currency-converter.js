@@ -18,9 +18,7 @@ const amount = process.argv[2];
 const initialcurrency = process.argv[3];
 const targetcurrency = process.argv[4];
 
-console.log(amount);
-console.log(initialcurrency);
-console.log(targetcurrency);
+
 
 
 // --------------------------------------------------
@@ -115,7 +113,7 @@ if (initialcurrency === 'CAD' && targetcurrency === 'IND'){
 	convertedAmount = amount * IND;
 }
 
-console.log(convertedAmount);
+
 
 
 // --------------------------------------------------
@@ -125,3 +123,8 @@ console.log(convertedAmount);
 
 // This message should also include the original amount and currency information
 // supplied by the user.
+
+console.log(` You submitted ${amount} ${initialcurrency}`);
+console.log (` This is equal to ${convertedAmount} ${targetcurrency}`);
+
+
