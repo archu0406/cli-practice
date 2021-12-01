@@ -8,6 +8,8 @@
 // differently. There are many paths and approaches that result in a perfectly
 // valid finished product.
 
+const { isAmountInvalid } = require('./validator-function');
+
 // --------------------------------------------------
 // Step 1: Capture user input
 // --------------------------------------------------
@@ -29,9 +31,6 @@ const targetcurrency = process.argv[4];
 // If any of the required information is missing, display a meaningful message
 // and exit the program.
 
-const isAmountInvalid = (amount) => {
-	return amount === undefined || amount < 0;
-};
 
 if (isAmountInvalid(amount)) {
 	console.error('Whoops, the amount must be a number greater than 0. Received ' , amount);
