@@ -29,16 +29,23 @@ const targetcurrency = process.argv[4];
 // If any of the required information is missing, display a meaningful message
 // and exit the program.
 
-if (amount === undefined || amount < 0) {
+const isAmountInvalid = (amount) => {
+	return amount === undefined || amount < 0;
+};
+
+if (isAmountInvalid(amount)) {
 	console.error('Whoops, the amount must be a number greater than 0. Received ' , amount);
+	process.exit();
 }
 
 if(initialcurrency === undefined) {
 	console.error('Whoops, you must provide a value for the initial currency. Received', initialcurrency);
+	process.exit();
 }
 
 if(targetcurrency === undefined){
 	console.error('Whoops, you must provide a value for the target currency. Received', targetcurrency);
+	process.exit();
 }
 
 
@@ -56,7 +63,7 @@ if(targetcurrency === undefined){
 
 let USD = 1;
 let CAD = 0.8;
-let IND = 0.017;
+let IND = 0.013;
 
 // --------------------------------------------------
 // Step 4: Ensure that a conversion rate exists
@@ -108,9 +115,9 @@ if (initialcurrency === 'USD' && targetcurrency === 'IND'){
 }
 
 if (initialcurrency === 'CAD' && targetcurrency === 'IND'){
-	convertedAmount = amount / IND;
+	convertedAmount = amount * CAD / IND;
 } else if (initialcurrency === 'IND' && targetcurrency === 'CAD'){
-	convertedAmount = amount * IND;
+	convertedAmount = amount * IND / CAD;
 }
 
 
