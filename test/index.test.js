@@ -45,6 +45,14 @@ describe('isInitialCurrencyInvalid())', () => {
 
 });
 
+describe('isTargetCurrencyInvalid())', () => {
+  test('should return true when the target currency is undefined', () => {   
+  });
+
+  test('should return false when the target currency is provided', () => {   
+  });
+
+});
 
 
 

@@ -6,8 +6,12 @@ const isInitialCurrencyInvalid = () => {
 	return initialcurrency === undefined ;
 };
 
+const isTargetCurrencyInvalid = () => {
+	return targetcurrency === undefined ;
+};
+
 module.exports = {
-	isAmountInvalid, isInitialCurrencyInvalid, 
+	isAmountInvalid, isInitialCurrencyInvalid, isTargetCurrencyInvalid,
 
 };
 
