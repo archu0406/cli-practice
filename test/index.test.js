@@ -10,7 +10,8 @@
 // file. In this case we've defined the function and the corresponding test in the
 // same file for illustrative and learning purposes.
 
-const { isAmountInvalid, isInitialCurrencyInvalid } = require ('../src/validator-function');
+const { isAmountInvalid, isInitialCurrencyInvalid, isTargetCurrencyInvalid, isSupportedInitialCurrenciesInvalid, 
+isSupportedTargetCurrenciesInvalid,} = require ('../src/validator-function');
 
 describe('isAmountInvalid()', () => {
   test('should return true when the amount is undefined', () => {
@@ -37,22 +38,50 @@ describe('isAmountInvalid()', () => {
 });
 
 describe('isInitialCurrencyInvalid())', () => {
-  test('should return true when the initial currency is undefined', () => {   
+  test('should return true when the initial currency is undefined', () => {
+    let initialcurrency;
+    const result = isInitialCurrencyInvalid(initialcurrency);   
+    expect(result).toBe(true);
   });
 
-  test('should return false when the initial currency is provided', () => {   
+  test('should return false when the initial currency is provided', () => {  
+    let initialcurrency;
+    const result = isInitialCurrencyInvalid(initialcurrency);  
+    expect(result).toBe(true);
   });
 
 });
 
 describe('isTargetCurrencyInvalid())', () => {
-  test('should return true when the target currency is undefined', () => {   
+  test('should return true when the target currency is undefined', () => {
+    let targetcurrency;  
+    const result = isTargetCurrencyInvalid(targetcurrency); 
+    expect(result).toBe(true);  
   });
 
-  test('should return false when the target currency is provided', () => {   
+  test('should return false when the target currency is provided', () => { 
+    let targetcurrency;
+    const result = isTargetCurrencyInvalid(targetcurrency);   
+    expect(result).toBe(true); 
+  });
+
+});
+
+describe('isSupportedInitialCurrenciesInvalid())', () => {
+  test('should return true when the initial currency is not supported', () => {
+    let initialcurrency;  
+    const result = isSupportedInitialCurrenciesInvalid(initialcurrency); 
+    expect(result).toBe(true);  
   });
 
 });
 
 
+describe('isSupportedTargetCurrenciesInvalid())', () => {
+  test('should return true when the initial currency is not supported', () => {
+    let targetcurrency;  
+    const result = isSupportedTargetCurrenciesInvalid(targetcurrency); 
+    expect(result).toBe(true);  
+  });
 
+});

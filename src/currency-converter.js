@@ -8,7 +8,7 @@
 // differently. There are many paths and approaches that result in a perfectly
 // valid finished product.
 
-const { isAmountInvalid, isInitialCurrencyInvalid,  } = require('./validator-function');
+const { isAmountInvalid, isInitialCurrencyInvalid, isTargetCurrencyInvalid, isSupportedInitialCurrenciesInvalid, isSupportedTargetCurrenciesInvalid } = require('./validator-function');
 
 // --------------------------------------------------
 // Step 1: Capture user input
@@ -19,8 +19,6 @@ const { isAmountInvalid, isInitialCurrencyInvalid,  } = require('./validator-fun
 const amount = process.argv[2];
 const initialcurrency = process.argv[3];
 const targetcurrency = process.argv[4];
-
-
 
 
 // --------------------------------------------------
@@ -37,12 +35,12 @@ if (isAmountInvalid(amount)) {
 	process.exit();
 }
 
-if(isInitialCurrencyInvalid()) {
+if(isInitialCurrencyInvalid(initialcurrency)) {
 	console.error('Whoops, you must provide a value for the initial currency. Received', initialcurrency);
 	process.exit();
 }
 
-if(targetcurrency === undefined){
+if(isTargetCurrencyInvalid(targetcurrency)){
 	console.error('Whoops, you must provide a value for the target currency. Received', targetcurrency);
 	process.exit();
 }
@@ -79,12 +77,12 @@ const supportedCurrencies = [
 	'IND'
 ];
 
-if(supportedCurrencies.includes(initialcurrency) === false) {
+if(isSupportedInitialCurrenciesInvalid(initialcurrency)) {
 	console.error('Whoops, the initial currency is unsupported. The supported currencies are:', supportedCurrencies);
 	process.exit();
 }
 
-if(supportedCurrencies.includes(targetcurrency) === false) {
+if(isSupportedTargetCurrenciesInvalid(targetcurrency)) {
 	console.error('Whoops, the target currency is unsupported. The supported currencies are:', supportedCurrencies);
 	process.exit();
 }
