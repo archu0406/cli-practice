@@ -10,7 +10,7 @@
 // file. In this case we've defined the function and the corresponding test in the
 // same file for illustrative and learning purposes.
 
-const { isAmountInvalid } = require ('../src/validator-function');
+const { isAmountInvalid, isInitialCurrencyInvalid } = require ('../src/validator-function');
 
 describe('isAmountInvalid()', () => {
   test('should return true when the amount is undefined', () => {
@@ -32,6 +32,15 @@ describe('isAmountInvalid()', () => {
     const result = isAmountInvalid(amount);
 
     expect(result).toBe(true);
+  });
+
+});
+
+describe('isInitialCurrencyInvalid())', () => {
+  test('should return true when the initial currency is undefined', () => {   
+  });
+
+  test('should return true when the initial currency is undefined', () => {   
   });
 
 });

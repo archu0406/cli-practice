@@ -8,7 +8,7 @@
 // differently. There are many paths and approaches that result in a perfectly
 // valid finished product.
 
-const { isAmountInvalid } = require('./validator-function');
+const { isAmountInvalid, isInitialCurrencyInvalid,  } = require('./validator-function');
 
 // --------------------------------------------------
 // Step 1: Capture user input
@@ -37,7 +37,7 @@ if (isAmountInvalid(amount)) {
 	process.exit();
 }
 
-if(initialcurrency === undefined) {
+if(isInitialCurrencyInvalid()) {
 	console.error('Whoops, you must provide a value for the initial currency. Received', initialcurrency);
 	process.exit();
 }
