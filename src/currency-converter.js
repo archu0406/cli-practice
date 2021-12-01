@@ -31,7 +31,17 @@ console.log(targetcurrency);
 // If any of the required information is missing, display a meaningful message
 // and exit the program.
 
+if (amount === undefined || amount < 0) {
+	console.error('Whoops, the amount must be a number greater than 0. Received ' , amount);
+}
 
+if(initialcurrency === undefined) {
+	console.error('Whoops, you must provide a value for the initial currency. Received', initialcurrency);
+}
+
+if(targetcurrency === undefined){
+	console.error('Whoops, you must provide a value for the target currency. Received', targetcurrency);
+}
 
 
 // --------------------------------------------------
